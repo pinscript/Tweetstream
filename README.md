@@ -1,9 +1,9 @@
 # What's tweetstream?
 
-Tweetstream is a (yet) simple wrapper around twitters streaming api for php.
+Tweetstream is a (yet) simple wrapper around Twitters streaming api for php.
 
 ## Features
- * Track all tweets for given keywords (sample usage below)
+ * Track all tweets for given keywords (sample usage below). This is useful since Twitter does not make tweets available forever.
 
 ## Usage
 
@@ -16,3 +16,5 @@ This will track all tweets containing either "twitter" or "foobar" and save it t
 		file_put_contents('log.txt', $message . PHP_EOL, FILE_APPEND); // Write tweets to file
 	});
 	$streamer->track('twitter', 'foobar');
+	
+Do you want to track everything said by/to a specific user? Just provide "@username" as a keyword.
