@@ -97,11 +97,3 @@ class Enforce
 }
 
 class ArgumentNullException extends Exception { }
-
-$streamer = new TweetStream();
-$streamer->setCredentials('alexnyquist', 'password');
-$streamer->setCallback(function($message) {
-	$message = sprintf('%s says: %s', $message->user->screen_name, $message->text);
-	file_put_contents('log.txt', $message . PHP_EOL, FILE_APPEND); // Write tweets to file
-});
-$streamer->track(array('twitter'));
